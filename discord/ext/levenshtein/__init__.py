@@ -1,11 +1,10 @@
 from collections import namedtuple
-from discord.ext.levenshtein import cogs
 from discord.ext import commands, levenshtein
 from typing import List
 
 
 VersionInfo = namedtuple('VersionInfo', 'major minor micro releaselevel serial')
-version_info = VersionInfo(major=0, minor=1, micro=2, releaselevel='alpha', serial=0)
+version_info = VersionInfo(major=0, minor=1, micro=3, releaselevel='alpha', serial=0)
 
 __version__ = '.'.join(map(str, [version_info.major, version_info.minor, version_info.micro]))
 
