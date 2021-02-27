@@ -1,7 +1,7 @@
-.. raw:: html
+discord-ext-levenshtein
+#######################
 
-    <h1 align="center">discord-ext-levenshtein</h1>
-    <p align="center">A discord.py extension for command name suggestion</p>
+A discord.py extension for command name suggestion
 
 Installation
 ============
