@@ -3,6 +3,10 @@ discord-ext-levenshtein
 
 A discord.py extension for command name suggestion
 
+.. image:: https://readthedocs.org/projects/discord-ext-levenshtein/badge/?version=latest
+    :target: https://discord-ext-levenshtein.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
+
 Installation
 ============
 
