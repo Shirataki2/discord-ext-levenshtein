@@ -59,7 +59,7 @@ setuptools.setup(
     classifiers=CLASSIFIERS,
     description='A discord.py extension for command name suggestion',
     long_description=LONG_DESCRIPTION,
-    long_description_content_type='text/markdown',
+    long_description_content_type='text/x-rst',
     extras_require=EXTRA_REQUIRES,
     install_requires=REQUIRES,
     license='MIT',
