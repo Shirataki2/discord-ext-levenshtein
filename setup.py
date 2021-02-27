@@ -47,7 +47,9 @@ EXTRA_REQUIRES = {
 }
 
 PROJECT_URLS = {
-    'source': 'https://github.com/shirataki2/discord-ext-levenshtein',
+    'Documentation': 'https://discord-ext-levenshtein.readthedocs.io/en/latest/',
+    'Source': 'https://github.com/shirataki2/discord-ext-levenshtein',
+    'Tracker': 'https://github.com/Shirataki2/discord-ext-levenshtein/issues',
 }
 
 setuptools.setup(
