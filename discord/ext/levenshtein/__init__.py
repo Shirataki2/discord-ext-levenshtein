@@ -49,8 +49,8 @@ class Levenshtein:
         self.bot = bot
         self._command_names: List[str] = []
         self._listup_commands(self.bot)
-        self.max_length = max_length
-        cog = InnerLevenshtein(self.bot, self.max_length, self._command_names)
+        self._max_length = max_length
+        cog = InnerLevenshtein(self.bot, self._max_length, self._command_names)
         self.bot.add_cog(cog)
 
     def _listup_commands(self, group, prefix=None):
@@ -71,3 +71,14 @@ class Levenshtein:
 
             elif isinstance(command, commands.Command):
                 self._command_names.append(prefix_str + command.name)
+    
+    @property
+    def max_length():
+        return self._max_length
+    
+    @max_length.setter
+    def max_length(val):
+        self._max_length = val
+        self.bot.get_cog("InnerLevenshtein").max_length = val
+
+    
