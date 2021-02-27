@@ -1,10 +1,11 @@
 from collections import namedtuple
-from discord.ext import commands, levenshtein
+from discord.ext import commands
 from typing import List
 
+from .cogs.levenshtein import InnerLevenshtein
 
 VersionInfo = namedtuple('VersionInfo', 'major minor micro releaselevel serial')
-version_info = VersionInfo(major=0, minor=2, micro=0, releaselevel='alpha', serial=0)
+version_info = VersionInfo(major=0, minor=2, micro=1, releaselevel='alpha', serial=0)
 
 __version__ = '.'.join(map(str, [version_info.major, version_info.minor, version_info.micro]))
 
@@ -49,7 +50,7 @@ class Levenshtein:
         self._command_names: List[str] = []
         self._listup_commands(self.bot)
         self.max_length = max_length
-        cog = levenshtein.cogs.InnerLevenshtein(self.bot, self.max_length, self._command_names)
+        cog = InnerLevenshtein(self.bot, self.max_length, self._command_names)
         self.bot.add_cog(cog)
 
     def _listup_commands(self, group, prefix=None):
