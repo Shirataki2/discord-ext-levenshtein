@@ -14,17 +14,17 @@ class Math(commands.Cog):
     async def mul(self, ctx, a: int, b: int):
         await ctx.send(a * b)
 
-    @commands.group()
+    @commands.group(invoke_without_command=True)
     async def consts(self, ctx):
-        await self.bot.send_help('consts')
+        await ctx.send_help('consts')
 
     @consts.command()
     async def pi(self, ctx):
-        await ctx.send(math.pi)
+        await ctx.send(f'{math.pi}')
 
     @consts.command()
     async def e(self, ctx):
-        await ctx.send(math.e)
+        await ctx.send(f'{math.e}')
 
 
 def setup(bot):
