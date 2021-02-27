@@ -10,9 +10,9 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
+import os
+import sys
+sys.path.insert(0, os.path.pardir)
 import re
 
 # -- Project information -----------------------------------------------------
@@ -29,9 +29,15 @@ author = 'Tomoya Ishii'
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
+    'sphinx.ext.doctest',
     'sphinx.ext.napoleon',
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
+    'sphinx.ext.ifconfig',
+    'sphinx.ext.viewcode',
+    'sphinx.ext.inheritance_diagram',
+    'sphinx.ext.autosummary',
+    'sphinx_rtd_theme',
     'sphinxcontrib_trio',
 ]
 
@@ -50,8 +56,8 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # a list of builtin themes.
 #
 
-html_theme = 'alabaster'
-# html_theme = 'sphinx_rtd_theme'
+# html_theme = 'alabaster'
+html_theme = 'sphinx_rtd_theme'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -60,13 +66,16 @@ html_static_path = ['_static']
 
 autodoc_typehints = 'none'
 intersphinx_mapping = {
-    'python': ('https://docs.python.org/3', None),
+    'py': ('https://docs.python.org/3', None),
+    'dpy': ('https://discordpy.readthedocs.io/ja/latest/', None)
 }
 
 highlight_language = 'python3'
 master_doc = 'index'
 pygment_style = 'friendly'
 source_suffix = '.rst'
+todo_include_todos = True
+
 
 with open('../discord/ext/levenshtein/__init__.py') as f:
     VERSION_MATCH = re.search(

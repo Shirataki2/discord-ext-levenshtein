@@ -33,13 +33,15 @@ CLASSIFIERS = [
 ]
 
 REQUIRES = [
-    'discord.py'
+    'discord.py',
+    'python-Levenshtein',
 ]
 
 EXTRA_REQUIRES = {
     'docs': [
         'sphinx',
         'sphinxcontrib_trio',
+        'sphinxcontrib-websupport',
         'sphinx-rtd-theme',
     ],
 }
@@ -53,7 +55,7 @@ setuptools.setup(
     author='Shirataki2',
     author_email='tmy1997530@gmail.com',
     classifiers=CLASSIFIERS,
-    description='A discord.py extension for command name search',
+    description='A discord.py extension for command name suggestion',
     long_description=LONG_DESCRIPTION,
     long_description_content_type='text/markdown',
     extras_require=EXTRA_REQUIRES,
