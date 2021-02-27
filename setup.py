@@ -12,7 +12,7 @@ if not VERSION_MATCH:
 
 VERSION = '.'.join([VERSION_MATCH.group(i) for i in range(1, 4)])
 
-with open('README.md') as f:
+with open('README.rst') as f:
     LONG_DESCRIPTION = f.read()
 
 CLASSIFIERS = [
