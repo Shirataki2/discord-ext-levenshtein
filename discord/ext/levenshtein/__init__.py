@@ -1,6 +1,6 @@
 from collections import namedtuple
 from discord.ext import commands
-from typing import List
+from typing import Set, List
 
 from .inner_cog import InnerLevenshtein
 
@@ -41,10 +41,10 @@ class Levenshtein:
 
     def __init__(self, bot: commands.Bot, max_length=3):
         self.bot = bot
-        self._command_names: List[str] = []
+        self._command_names: Set[str] = set()
         self._listup_commands(self.bot)
         self._max_length = max_length
-        cog = InnerLevenshtein(self.bot, self._max_length, self._command_names)
+        cog = InnerLevenshtein(self.bot, self._max_length, list(self._command_names))
         self.bot.add_cog(cog)
 
     def _listup_commands(self, group, prefix=None):
@@ -58,13 +58,17 @@ class Levenshtein:
                 continue
 
             elif isinstance(command, commands.Group):
-                self._command_names.append(prefix_str + command.name)
-                prefix.append(command.name)
-                self._listup_commands(command, prefix)
-                prefix.pop()
+                names = [command.name] + list(command.aliases)
+                for name in names:
+                    self._command_names.add(prefix_str + name)
+                    prefix.append(command.name)
+                    self._listup_commands(command, prefix)
+                    prefix.pop()
 
             elif isinstance(command, commands.Command):
-                self._command_names.append(prefix_str + command.name)
+                names = [command.name] + list(command.aliases)
+                for name in names:
+                    self._command_names.add(prefix_str + name)
 
     @property
     def max_length(self):

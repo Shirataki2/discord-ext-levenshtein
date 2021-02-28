@@ -9,7 +9,7 @@ class MyBot(commands.Bot):
 
     async def on_ready(self):
         print('Bot is ready')
-        levenshtein.Levenshtein(self, max_length=3)
+        levenshtein.Levenshtein(self, max_length=4)
 
     async def on_command_suggest(self, ctx, suggested_commands):
         body = 'suggested commands: ' + ' '.join([f'`{command}`' for command in suggested_commands])
