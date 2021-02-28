@@ -3,9 +3,7 @@ discord-ext-levenshtein
 
 A discord.py extension for command name suggestion
 
-.. image:: https://readthedocs.org/projects/discord-ext-levenshtein/badge/?version=latest
-    :target: https://discord-ext-levenshtein.readthedocs.io/en/latest/?badge=latest
-    :alt: Documentation Status
+|Docs| |PyPI| |Support| |Lint| |Build|
 
 Installation
 ============
@@ -64,3 +62,18 @@ when ``on_ready`` is called.
     bot.run(os.environ['BOT_TOKEN'])
 
 For more usage, refer to `the examples directory <https://github.com/shirataki2/discord-ext-levenshtein/tree/master/examples>`_
+
+.. |Docs| image:: https://readthedocs.org/projects/discord-ext-levenshtein/badge/?version=latest
+    :target: https://discord-ext-levenshtein.readthedocs.io/en/latest/?badge=latest
+
+.. |Build| image:: https://github.com/Shirataki2/discord-ext-levenshtein/actions/workflows/build.yml/badge.svg
+    :target: https://github.com/Shirataki2/discord-ext-levenshtein/actions/workflows/build.yml
+
+.. |Lint| image:: https://github.com/Shirataki2/discord-ext-levenshtein/actions/workflows/linting.yml/badge.svg
+    :target: https://github.com/Shirataki2/discord-ext-levenshtein/actions/workflows/linting.yml
+
+.. |PyPI| image:: https://badge.fury.io/py/discord-ext-levenshtein.svg
+    :target: https://pypi.org/project/discord-ext-levenshtein/
+
+.. |Support| image:: https://img.shields.io/pypi/pyversions/discord-ext-levenshtein.svg
+    :target: https://pypi.org/project/discord-ext-levenshtein/
