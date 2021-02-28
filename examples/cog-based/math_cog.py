@@ -10,7 +10,7 @@ class Math(commands.Cog):
     async def add(self, ctx, a: int, b: int):
         await ctx.send(a + b)
 
-    @commands.command(aliases=['m','multiply'])
+    @commands.command(aliases=['m', 'multiply'])
     async def mul(self, ctx, a: int, b: int):
         await ctx.send(a * b)
 
