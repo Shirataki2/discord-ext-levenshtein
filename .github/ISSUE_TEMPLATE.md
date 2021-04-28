@@ -9,4 +9,4 @@
 
 ### Environment
 - OS: Write here
-- Go version: Write here
+- Python version: Write here
